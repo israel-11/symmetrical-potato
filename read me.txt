@@ -1,0 +1,22 @@
+//// important \\\\
+
+home page del website: index.php
+header and footer: header.php & footer.php
+opened news: post.php
+load files: functions.php
+css: style.css or create other css file
+edit a specific page: page-name.php
+open content: content.php
+
+//// posibilities \\\\
+
+current categories: news, podcasts, events, opportunies
+possible new categories: science, engineering, medicine, discoveries, community, education, 
+possible opportunities categories: jobs, elementary school, high school, undergrad, graduate, research
+
+//// tasks \\\\
+
+1- Verificar como hacer website billingue (Leo)
+2- Como añadir social media interactivamente (both)
+3- Portability (Israel)
+4- Crear sidebar en ingles y español
