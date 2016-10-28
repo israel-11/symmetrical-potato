@@ -22,7 +22,7 @@
 <script>
     $(function(){
         $("#footer").load("wp-content/themes/cienciapr_theme/footer.html");
-        $("#headerContent").load("header.html");
+        $("#header").load("wp-content/themes/cienciapr_theme/header.html");
     });
 </script>
 </head>
@@ -40,51 +40,16 @@
 </div>
 <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
-
-  <section id="navArea">
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav main_nav">
-          <li class="active"><a style="background-color:#AED581;" href="http://localhost/cienciaprwp/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
-          <li class="dropdown"> <a href="http://localhost/cienciaprwp/news/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News</a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://localhost/cienciaprwp/category/locales">Locals</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/ciencia">Science</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/salud">Health</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/educacion">Education</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/internacioneles">Internationals</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"> <a href="google.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opportunities</a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://localhost/cienciaprwp/category/escuelas">K-12</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/subgraduados">Undergraduate</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/graduados">Graduate</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/postdocs">Postodcs</a></li>
-              <li><a href="http://localhost/cienciaprwp/category/trabajos">Jobs</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="events">Events</a></li>
-          <li><a href="http://localhost/cienciaprwp/category/podcasts/">Podcasts</a></li>
-          <li><a href="wp-content/themes/cienciapr_theme/pages/contact.html">About Us</a></li>
-          <li style="left: 30%;margin-top: 1.5%;" id="google_translate_element"></li>
-        </ul>
-      </div>
-    </nav>
-  </section>
+  <div id="header"></div>
   <section id="newsSection">
     <div class="row">
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea"> <span>Ciencia Puerto Rico</span>
           <ul id="ticker01" class="news_sticker">
             <?php
-      				wp_reset_query();
-      				$args = array(
-      					'type' => 'post',
+              wp_reset_query();
+              $args = array(
+                'type' => 'post',
                   'posts_per_page' => 7,
                   'category_name' => 'noticias'
                   );
@@ -92,8 +57,8 @@
                   while($news->have_posts()) : $news -> the_post(); ?>
                   <li><a href="<?php the_permalink(); ?>"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt=""><?php the_title(); ?></a></li>
                   <?php
-      				endwhile;
-      			?>
+              endwhile;
+            ?>
           </ul>
           <div class="social_area">
             <ul class="social_nav">
@@ -108,6 +73,7 @@
       </div>
     </div>
   </section>
+
   <!-- carusel -->
   <section id="sliderSection">
     <div class="row">
