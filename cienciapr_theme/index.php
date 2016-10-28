@@ -40,7 +40,9 @@
 </div>
 <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
+
   <div id="header"></div>
+
   <section id="newsSection">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -64,7 +66,7 @@
             <ul class="social_nav">
               <li class="facebook"><a href="#"></a></li>
               <li class="twitter"><a href="#"></a></li>
-              <li class="googleplus"><a href="#"></a></li>
+              <li class="linkedin"><a href="#"></a></li>
               <li class="youtube"><a href="#"></a></li>
               <li class="mail"><a href="#"></a></li>
             </ul>

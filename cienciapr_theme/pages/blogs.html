@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ciencia Exotica</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/li-scroller.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#footer").load("../footer.html");
+            $("#header").load("../header.html");
+        });
+    </script>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+    <!--
+
+    <header id="header">
+       <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="header_top">
+             <div class="header_top_left">
+               <ul class="top_nav">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="pages/contact.html">Contact</a></li>
+               </ul>
+             </div>
+             <div class="header_top_right">
+               <p>Day, Month Day#, Year</p>
+             </div>
+           </div>
+         </div>
+         <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="header_bottom">
+             <div class="logo_area"><a href="index.html" class="logo"><img src="wp-content/themes/cienciapr_theme/images/logo.jpg" alt=""></a></div>
+             <div class="add_banner"><a href="#"><img src="wp-content/themes/cienciapr_theme/images/addbanner_728x90_V1.jpg" alt=""></a></div>
+           </div>
+         </div>
+       </div>
+     </header>
+
+     -->
+
+    <div id = "header"></div>
+    <section id="newsSection">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="latest_newsarea"> <span>Latest News</span>
+                    <ul id="ticker01" class="news_sticker">
+                        <!--<li><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My First News Item</a></li>-->
+                        <?php
+				wp_reset_query();
+				$args = array(
+					'type' => 'post',
+                        'posts_per_page' => 3,
+                        'category_name' => 'noticias'
+                        );
+                        $news = new WP_Query($args);
+                        while($news->have_posts()) : $news -> the_post(); ?>
+                        <li><a href="<?php the_permalink(); ?>"><img src="../images/news_thumbnail3.jpg" alt=""><?php the_title(); ?></a></li>
+                        <?php
+				endwhile;
+			?>
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Second News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Third News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Four News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Five News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Six News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Seven News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail3.jpg" alt="">My Eight News Item</a></li>-->
+                        <!--<li><a href="#"><img src="wp-content/themes/cienciapr_theme/images/news_thumbnail2.jpg" alt="">My Nine News Item</a></li>-->
+                    </ul>
+                    <div class="social_area">
+                        <ul class="social_nav">
+                            <li class="facebook"><a href="#"></a></li>
+                            <li class="twitter"><a href="#"></a></li>
+                            <li class="googleplus"><a href="#"></a></li>
+                            <li class="youtube"><a href="#"></a></li>
+                            <li class="mail"><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contentSection">
+        <div class="row" style="margin-top:5%;">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="left_content">
+                    <div class="fashion_technology_area">
+                        <div class="fashion">
+                            <div class="single_post_content">
+                                <h2><span>Equipo CienciaPR Informa</span></h2>
+                                <ul class="business_catgnav wow fadeInDown">
+                                    <li>
+                                        <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/equipo_cienciapr.jpg"> <span class="overlay"></span> </a>
+                                            <h3 class="text-center">Noticias e historias de nuestro equipo.</h3>
+                                        </figure>
+                                    </li>
+                                </ul>
+                                <ul class="spost_nav">
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="technology">
+                            <div class="single_post_content">
+                                <h2><span>Borinqueña</span></h2>
+                                <ul class="business_catgnav wow fadeInDown">
+                                    <li>
+                                        <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/borinquena.jpg"> <span class="overlay"></span> </a>
+                                            <h3 class="text-center">Un espacio para las cientificas hispanas.</h3>
+                                        </figure>
+                                    </li>
+                                </ul>
+                                <ul class="spost_nav">
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>Cerebros Boricuas</span></h2>
+                            <ul class="business_catgnav wow fadeInDown">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/cerebros_boricuas.jpg"> <span class="overlay"></span> </a>
+                                        <h3 class="text-center">Celebrando el exito y los logros de nuestros miembros.</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="left_content">
+                    <div class="fashion_technology_area">
+                        <div class="fashion">
+                            <div class="single_post_content">
+                                <h2><span>Academia Cientifica de Yale</span></h2>
+                                <ul class="business_catgnav wow fadeInDown">
+                                    <li>
+                                        <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/yca.png"> <span class="overlay"></span> </a>
+                                            <h3 class="text-center">Mentoria y desarrollo profesional para tener exito en estudios graduados.</h3>
+                                        </figure>
+                                    </li>
+                                </ul>
+                                <ul class="spost_nav">
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="technology">
+                            <div class="single_post_content">
+                                <h2><span>Conocimiento a tu Salud</span></h2>
+                                <ul class="business_catgnav wow fadeInDown">
+                                    <li>
+                                        <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/conocimiento.jpg"> <span class="overlay"></span> </a>
+                                            <h3 class="text-center">Compartiendo la ciencia detras de la salud y el bienestar del ser humano.</h3>
+                                        </figure>
+                                    </li>
+                                </ul>
+                                <ul class="spost_nav">
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                            <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>Miembros de Ciencia PR</span></h2>
+                            <ul class="business_catgnav wow fadeInDown">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/members_blog.jpg"> <span class="overlay"></span> </a>
+                                        <h3 class="text-center">Una coleccion de escritos, contribuidos por nuestros miembros.</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <h2 style="margin-bottom:5%;" class="text-center col-lg-12 col-md-12 co-xs-12">Colaboradores:</h2>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>Forward Research</span></h2>
+                            <ul class="business_catgnav wow fadeInDown">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/forward_blog.jpg"> <span class="overlay"></span> </a>
+                                        <h3>Puerto Rico Science Technology and Research Trust</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>Soft Matter</span></h2>
+                            <ul class="business_catgnav wow fadeInDown">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/soft_matter.png"> <span class="overlay"></span> </a>
+                                        <h3 class="text-center">Un mundo nano al alcance de las puntas de tus dedos.</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>Biotectonica</span></h2>
+                            <ul class="business_catgnav wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/biotectonica.jpg"> <span class="overlay"></span> </a>
+                                        <h3 class="text-center">En la interfase de la ciencia, el diseño y la arquitectura.</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <aside class="right_content">
+                    <div style="width:100%" class="fashion">
+                        <div class="single_post_content">
+                            <h2><span>UPRM - SCI</span></h2>
+                            <ul class="business_catgnav wow fadeInDown">
+                                <li>
+                                    <figure class="bsbig_fig"> <a href="single_page.html" class="featured_img"> <img alt="" src="../images/uprm_sci.png"> <span class="overlay"></span> </a>
+                                        <h3 class="text-center">La iniciativa cientifica de la Universidad de Puerto RIco, Mayaguez.</h3>
+                                    </figure>
+                                </li>
+                            </ul>
+                            <ul class="spost_nav">
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="single_page.html" class="catg_title">Por que debes comprarte una Windows.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user2.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Windows 'suckea'.</a> </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media wow fadeInDown"> <a href="../pages/single_page.html" class="media-left"> <img alt="" src="../images/user1.jpg"> </a>
+                                        <div class="media-body"> <a href="../pages/single_page.html" class="catg_title">Mi teammate es el duro.</a> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <div id = "footer"></div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/wow.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/slick.min.js"></script>
+<script src="../assets/js/jquery.li-scroller.1.0.js"></script>
+<script src="../assets/js/jquery.newsTicker.min.js"></script>
+<script src="../assets/js/jquery.fancybox.pack.js"></script>
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>
