@@ -1,0 +1,83 @@
+To do list & notes
+
+general:
+	header
+		linkear categorias con actual categories page 
+		poner permalink en los hrefs
+		scripts para 
+
+	footer
+		code
+
+	modularizar codigo
+	SEARCH BAR 
+	investigar engagment testing
+	empezar a hablar con team de cienciapr
+
+home page:
+	poner tags en vez de categorias en side menu
+	poner useful links
+	arreglar hyper links de todo
+
+single.php:
+	formating de las noticias:
+		fotos no se alinean como se pusieron en el dashboard
+		que se va a hacer con el source de la noticia?
+		review styling 
+	comentarios (integracion con social media)
+	social media links
+
+noticias:
+	DONE
+
+oportunidades:
+	REVISAR CATEGORIAS
+		internados
+		becas
+		trabajos
+		investigaciones
+
+	OLD CA
+
+eventos:
+	integrar plugin 
+	como se graban eventos al DB?
+
+podcasts:
+	code
+
+about us:
+	code, ver que info es relevante para aqui
+	contact info
+	team cienciapr
+
+archives (author, category, dates):
+	code
+
+dashboard: 
+	conpararlo con drupal
+	empezar guide y tips 
+
+user accounts:
+	los users tendran cuenta?
+	better social media interation
+	what can users do?
+
+wordpress loop:
+
+wp_reset_query();
+$args = array(
+	'type' => 'post',
+	'posts_per_page' => 3,
+	'category_name' => 'noticias'
+	); /args filtra las noticias del loop
+$news = new WP_Query($args);
+while($news->have_posts()) : $news -> the_post(); ?>
+	the_permalink(); //link de la noticias
+ 	the_title(); 
+ 	the_content(); //te tira el html creado en el dashboard, incluyendo fotos, y otros tags 
+ 	the_category(' , '); //separa lista de categorias con comas
+ 	get_category_link($category);
+ 	the_author();
+ 	//link noticias con el permalink
+endwhile; 
