@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ciencia Exotica</title>
+<title>Ciencia PR</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="http://www.cienciapr.org/sites/cienciapr.org/files/cienciapr-icon_0.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="wp-content/themes/cienciapr_theme/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="wp-content/themes/cienciapr_theme/assets/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="wp-content/themes/cienciapr_theme/assets/css/animate.css">
